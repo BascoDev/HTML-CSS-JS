@@ -18,28 +18,46 @@
         </div>
     </li>
     <li>
-        <a href="#"><i class="fa fa-book" aria-hidden="true"></i></a> 
+        <a class="social social_redBook" href="#"><i class="fa fa-book" aria-hidden="true"></i></a> 
+        <div class="pop pop_redBook">
+            <img src='https://starfunding.horntech.co.nz/wp-content/uploads/2022/07/3003e0daca08a066f8f3639750c949b.jpg' /> 
+            <span class="social close">Close</span>
+        </div>
     </li>
 </ul>
 
 <style>
     .social{
-        cursor: pointer;
+      cursor: pointer;
     }
-    
+
     .pop{
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        display: none;
-        padding: 10px;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      display: none;
+      padding: 10px;
+    }
+
+    .pop.pop_redBook img{
+        max-width: 400px;
     }
 </style>
 <script>
-    var pop = $('.pop_wechat');
+    var pop = $('.pop');
+    var pop_wechat = $('.pop_wechat');
+    var pop_redBook = $('.pop_redBook');
+
     $('.social_wechat').on('click', function(e){
         e.stopPropagation();  
-        pop.show();
+        pop_wechat.show();
+        pop_redBook.hide();
+    });
+
+    $('.social_redBook').on('click', function(e){
+        e.stopPropagation();  
+        pop_redBook.show();
+        pop_wechat.hide();
     });
 
     $('.close').on('click', function(){
