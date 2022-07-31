@@ -1,0 +1,53 @@
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<ul>
+    <li>
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </li>
+    <li>
+        <a class="social social_wechat" href="#"><i class="fab fa-weixin" aria-hidden="true">No icon show</i></a> 
+        <div class="pop pop_wechat">
+            <img src='https://starfunding.horntech.co.nz/wp-content/uploads/2022/07/b4a1f424ca4c1bd5c88fab9b218cf3c.jpg' /> 
+            <span class="social close">Close</span>
+        </div>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-book" aria-hidden="true"></i></a> 
+    </li>
+</ul>
+
+<style>
+    .social{
+        cursor: pointer;
+    }
+    
+    .pop{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        display: none;
+        padding: 10px;
+    }
+</style>
+<script>
+    var pop = $('.pop_wechat');
+    $('.social_wechat').on('click', function(e){
+        e.stopPropagation();  
+        pop.show();
+    });
+
+    $('.close').on('click', function(){
+        pop.hide();
+    });
+    $(document).click(function(e){
+        if(!pop.is(e.target) && pop.has(e.target).length === 0){
+            pop.hide();
+        }
+    });
+</script>
