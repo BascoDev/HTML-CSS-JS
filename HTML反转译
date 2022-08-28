@@ -1,0 +1,18 @@
+//解决HTML转义导致的HTML符号失效 
+//e.g. 换行符<br>被转义而导致失效的问题
+
+<p class="title" >this is a <br> title.</p>
+<p class="title" >this is a <br> title.</p>
+<p class="title" >this is a <br> title.</p>
+<p class="title" >this is a <br> title.</p>
+
+<script>
+  var title = document.getElementsByClassName( 'title' );
+
+  for( let i = 0; i < title.length; i++ ){
+    var child = title[i];
+
+    var body = child.innerText;
+    child.innerHTML = body;
+  }
+</script>
