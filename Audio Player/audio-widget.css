@@ -1,0 +1,161 @@
+.widget_container .title{
+    color: #BBA0D6;
+    font-family: "Marigny Bold", Sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.widget_container .subTitle{
+    color: #343633;
+    font-family: "Proxima Nova", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.widget_container{
+    max-width: 1000px;
+}
+.audio-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.audio-player{
+    background-image: url("https://haakaafoundation.org/wp-content/uploads/2022/09/background.jpg");
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 10% 0 10%;
+}
+embed{
+    pointer-events: none;
+    border-radius: 50%;
+}
+/* Player Button */
+.donateButton{
+    margin: 50px 0 50px 0;
+}
+.donateButton a{
+    font-family: "Marigny Bold", Sans-serif;
+    font-weight: 600;
+    fill: #66A32B;
+    color: #66A32B;
+    background-color: #FFFFFF;
+    border-radius: 50px 50px 50px 50px;
+    padding: 12px 24px;
+    border: 1px solid #66A32B;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.5s;
+}
+.donateButton a:hover{
+    background-color: #DDEACF;
+}
+/*--------------------------------------------------*/
+/* start icon */
+#playerStart{
+    position: absolute;
+    bottom: -25px;
+    opacity: 0;
+    line-height: 0;
+}
+/* end icon */
+#playerEnd{
+    position: absolute;
+    bottom: -25px;
+    opacity: 0;
+    line-height: 0;
+}
+.appearIconAnimation{
+    animation: appearIcon 0.3s linear forwards;
+}
+@keyframes appearIcon {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.disappearIconAnimation{
+    animation: disappearIcon 0.3s linear forwards;
+}
+@keyframes disappearIcon {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+/* Player iamge */
+.playerImage{
+    position: relative;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#playerImageBefore{
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 0px;
+}
+#playerImageAfter{
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    line-height: 0px;
+}
+
+/* Two images, 4 animation class */
+.beforeHoverBack{
+    animation: beforeBackAnimation 0.2s linear forwards;
+}
+@keyframes beforeBackAnimation {
+    from{
+        transform: rotate(-90deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.beforeHoverStart{
+    animation: beforeStartAnimation 0.2s linear forwards;
+}
+@keyframes beforeStartAnimation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-90deg);
+    }
+}
+.afterHoverBack{
+    animation: afterBackAnimation 0.2s linear forwards;
+}
+@keyframes afterBackAnimation {
+    from{
+        transform: rotate(-90deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.afterHoverStart{
+    animation: afterStartAnimation 0.2s linear forwards;
+}
+@keyframes afterStartAnimation {
+    from{
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    to{
+        transform: rotate(-90deg);
+        opacity: 1;
+    }
+}
+/*------------------------------------------------*/
